@@ -5,8 +5,11 @@ const port = 3000
 const app = express()
 
 app.use("/", async (req, res) => {
-    res
     res.sendFile(path.join(__dirname,"index.html"))
+})
+
+app.use("/test", async (req,res) => {
+    res.redirect("https://www.w3schools.com/")
 })
 
 app.listen(port, ()=> {
